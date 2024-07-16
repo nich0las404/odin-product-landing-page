@@ -1,0 +1,416 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+:root{
+    --color-blue: rgb(99, 99, 233);
+    --color-red: rgb(192, 51, 51);
+    --color-light-red: rgb(255, 107, 107);
+    /* btn color requirements */
+    --m: 1.2rem;
+  --light-blue: rgb(108, 108, 255);
+  --red: #FF6565;
+  --pink: #FF64F9;
+  --purple: #6B5FFF;
+  --blue: #4D8AFF;
+  --green: #5BFF89;
+  --yellow: #FFEE55;
+  --orange: #FF6D1B;
+}
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.nav-lists{
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    padding: 8px 4.5%;
+    align-items: center;
+    position: relative;
+}
+.logo{
+    height: 45px;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: App-logo-spin infinite 10s linear;
+    }
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+.navigation-bar{
+    width: 100%;
+    position: fixed;
+    background: transparent;
+    z-index: 2;
+    backdrop-filter: blur(6px);
+    border-bottom: 1.5px solid rgb(146, 82, 82);
+}
+.logo-container{
+    margin-right: auto;
+    color: white;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    background: linear-gradient(160deg,rgb(99, 99, 233),rgb(192, 51, 51));
+    padding: 4px 20px;
+    border-radius: 30px;
+    cursor: none
+}
+.logo-text{
+    margin-left: 8px;
+    color:rgb(255, 255, 255);
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+.nav-li{
+    font-size: 1.3em;
+    padding: 0px 8px;
+}
+.nav-li::before{
+    content: "";
+    position: absolute;
+    background: url("https://i.gifer.com/origin/18/1881d8691bd9ff18bea62c0a275e1da6_w200.gif");
+    top: -20px;
+    width: 55px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.nav-li:hover::before{
+    opacity: 1;
+}
+.nav-link:hover{
+    color: white
+}
+.nav-link{
+    text-decoration: none;
+    color: rgb(255, 107, 107);
+    transition: 0.3s ease-out;
+    font-weight: bold;
+}
+/* header section */
+header{
+    height: 100vh;
+    background: rgb(57, 57, 57);
+    position: relative;
+    z-index: 1;
+    display: flex;
+}
+.gif-background{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(https://i.pinimg.com/originals/98/93/c5/9893c5f96f35f50272b39faf25daaf13.gif);
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1
+}
+.header-container{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 16px 10px;
+    background: transparent;
+    border-radius: 20px;
+    color: whitesmoke;
+    backdrop-filter: blur(5px);
+    border: 3px solid var(--color-light-red);
+    width: 800px;
+    transition: 0.3s ease-out
+}
+.header-container:hover{
+    box-shadow: 2px 2px 10px 2px rgb(255, 255, 255);
+}
+.header-title-container{
+    width: 55%;
+    text-align: center;
+}
+.title{
+    margin-bottom: 10px;
+    font-size: 1.9em
+}
+.sub-title{
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+.header-img{
+    height: 300px;
+    border-radius: 20px;
+}
+.header-img-container{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-sign-up-btn{
+    border: calc(0.08 * var(--m)) solid transparent;
+    position: relative;
+    color: #F3F3F3;
+    font-size: var(--m);
+    border-radius: calc(0.7 * var(--m));
+    padding: calc(0.5 * var(--m)) calc(1 * var(--m));
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+    background-origin: border-box;
+    background-clip: padding-box, border-box, border-box;
+    background-size: 200%;
+    animation: animate 2s infinite linear;
+    transition: 0.2s ease-out;
+    margin: auto;
+}
+.header-sign-up-btn::before{
+    content: '';
+    background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+    height: 30%;
+    width: 60%;
+    position: absolute;
+    bottom: -20%;
+    z-index: -5;
+    background-size: 200%;
+    animation: animate 2s infinite linear;
+    filter: blur(calc(0.8 * var(--m)));
+}
+
+.header-sign-up-btn:hover{
+    color: var(--pink)
+}
+.header-sign-up-btn:hover, .header-sign-up-btn::before{
+    animation: animate 0.5s infinite linear;
+}
+@keyframes animate {
+    0% {background-position: 0}
+    100% {background-position: 200%}
+}
+@media (max-width: 650px){
+    .header-img{
+        height: 260px;
+    }
+    .header-img-container{
+        width: 45%
+    }
+    .header-title-container{
+        width: 55%;
+        margin-right: 10px
+    }
+    .title{
+        font-size: 1.8em
+    }
+    .sub-title{
+        font-size: 0.9em
+    }
+    .header-sign-up-btn{
+        font-size: 1em;
+    }
+}
+  /* main section */
+main{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(60deg , blue, var(--color-light-red), var(--light-blue), var(--color-red));
+    background-size: 300% 300%;
+    animation: color 10s ease-in-out infinite;
+}
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+main h1{
+    padding: 35px 10px;
+    text-align: center;
+}
+.card-container{
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    padding: 50px 0;
+}
+.card-inner-container{
+    width: 280px;
+    align-items: center;
+    text-align: center;
+}
+.card-inner-container p{
+    padding: 5px 10px;
+    font-weight: bold;
+    opacity: 0.6;
+}
+.card{
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    border: 3px solid rgb(255, 255, 255);
+    transition: 0.3s ease-out;
+}
+.card:hover{
+    box-shadow:
+    0 0 30px 10px #fff,  /* inner white */
+    0 0 30px 10px #f0f, /* middle magenta */
+    0 0 30px 10px red; /* outer cyan */
+}
+.card1:hover{
+    border: 3px solid var(--light-blue)
+}
+.card2:hover{
+    border: 3px solid var(--red)
+}
+.card3:hover{
+    border: 3px solid var(--pink)
+}
+.card4:hover{
+    border: 3px solid var(--green)
+}
+.card1{
+    background-image: url(https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1637910595/cuyllwolvvtgebuymbnb.jpg);
+}
+.card2{
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/eaf6548a-55e6-421b-8580-a970e690a732/dfy8jlt-efaa8a38-227e-4203-a25b-12ada7243d91.jpg/v1/fill/w_894,h_894,q_70,strp/goofy_ahhh_panel_from_naruto_colored_by_me__by_malupit8ian_dfy8jlt-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcL2VhZjY1NDhhLTU1ZTYtNDIxYi04NTgwLWE5NzBlNjkwYTczMlwvZGZ5OGpsdC1lZmFhOGEzOC0yMjdlLTQyMDMtYTI1Yi0xMmFkYTcyNDNkOTEuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.3qJITDPqp9i8K_DafPD0eL0y3iCEc2dSi-RJdod0aHg);
+}
+.card3{
+    background-image: url(https://tenor.com/pt-BR/view/jjk-fans-nine-chat-gif-17032110783797255727.gif);
+    background-position-y: 0;
+}
+.card4{
+    background-image: url(https://qph.cf2.quoracdn.net/main-qimg-7cfb471686f16cd5fbc9d04aeea3c54a-lq)
+}
+.main-card-title-span{
+    color: white
+}
+/* quote section */
+.quote-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: black;
+    z-index: 1
+}
+.the-quote{
+    margin: 0px 20px;
+    width: 70%;
+    min-width: 550px;
+    color: white
+}
+.the-quote h1{
+    font-size: 3.5em
+}
+.the-quote p{
+    margin-top: 15px;
+    font-size: 1.3em
+}
+.quote-gif{
+    background: url(https://i.pinimg.com/originals/f9/0c/7d/f90c7db8684f33504ccfd69cd742c4b0.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1
+}
+@media (max-width: 650px){
+    .the-quote h1{
+        font-size: 3em
+    }
+}
+/* sign-up section */
+.sign-up-section{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, var(--color-blue), var(--color-light-red) 60%);
+    width: 100%;
+    position: relative
+}
+.sign-up-container{
+    background: var(--blue);
+    padding: 18px 20px;
+    display: flex;
+    margin: 0 20px;
+    border-radius: 15px;
+    justify-content: space-evenly;
+    max-width: 700px;
+    align-items: center;
+    box-shadow: -3px 3px rgb(0, 0, 0);
+    margin-top: -100px;
+}
+.sing-up-desc{
+    width: 50%;
+}
+.sign-up-container h3{
+    font-size: 1.5em;
+    margin-bottom: 8px;
+    color: white
+}
+.sign-up-btn-container{
+    width: 50%
+}
+.sign-up-container p{
+    margin-right: 30px;
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+}
+.sign-up-btn{
+    font-size: 1.2em;
+    padding: 16px 18px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    background: var(--color-light-red);
+    font-weight: bold;
+}
+.sign-up-btn:hover{
+    background: linear-gradient(45deg ,red, blue);
+    background-size: 300% 300%;
+    animation: color 2s ease-in-out infinite;
+    color: white
+}
+/* footer section */
+footer{
+    position: absolute;
+    bottom: 0;
+    height: 12vh;
+    width: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    padding-left: 50px
+}
+.footer-text{
+    color: white
+}

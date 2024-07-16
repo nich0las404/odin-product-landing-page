@@ -1,0 +1,2 @@
+## PLEASE WORK LOL (TESTING MARKDOWN FRFR)
+this marks my 2nd Project in Odin, this was a fun project and i had made the most of my abilities in this fun little project, i wish to keep growing and one day i can look back and be proud of the progress ive built along the years
